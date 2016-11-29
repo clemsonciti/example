@@ -4,7 +4,7 @@ from example import *
 import argparse
 
 parser = GetExampleParser(description='A program to get Palmetto examples')
-parser.set_defaults(examples_dir='/Users/ashwin/example/test_examples')
+parser.set_defaults(examples_dir='/software/examples/examples')
 subparsers = parser.add_subparsers()
 
 list_subparser = subparsers.add_parser('list', help='List all available examples')
