@@ -43,7 +43,12 @@ def get_example(args):
 def get_example_info(args):
     print('')
     print("Description for example \"{0}\":".format(args.name))
-    print('')
+
+    example_dir = os.path.join(args.examples_dir, args.name)
+    if not os.path.isdir(example_dir):
+        print('*** Error: no example named {0} ***'.format(args.name))
+        sys.exit(1)
+
     with open(os.path.join(args.examples_dir, args.name, 'README.md')) as f:
         print(reindent(f.read()))
 
