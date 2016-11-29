@@ -16,6 +16,8 @@ def list_examples(args):
     print('')
     print('Available examples:')
     for i, d in enumerate(os.listdir(args.examples_dir)):
+        if d.startswith('.'):
+            continue
         print('    {0}. {1}'.format(i+1, d))
 
 def get_example(args):
