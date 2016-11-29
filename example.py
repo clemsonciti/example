@@ -15,10 +15,12 @@ class GetExampleParser(argparse.ArgumentParser):
 def list_examples(args):
     print('')
     print('Available examples:')
-    for i, d in enumerate(os.listdir(args.examples_dir)):
-        if d.startswith('.'):
-            continue
-        print('    {0}. {1}'.format(i+1, d))
+    i = 1
+    for d in os.listdir(args.examples_dir):
+        if os.path.isdir(os.path.join(args.examples_dir, d)):
+            if not d.startswith('.'):
+                print('    {0}. {1}'.format(i, d))
+                i += 1
 
 def get_example(args):
     print('')
