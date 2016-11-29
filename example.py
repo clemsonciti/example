@@ -40,7 +40,7 @@ def get_example(args):
         print("*** Error in copying to {0}; perhaps a folder called {0} already exists? ***".format(dest_dir))
         sys.exit(1)
 
-    print('Example MATLAB copied into {0}.'.format(os.path.abspath(dest_dir)))
+    print('Example {0} copied into {1}.'.format(args.name, os.path.abspath(dest_dir)))
 
 def get_example_info(args):
     print('')
